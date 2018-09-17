@@ -1,0 +1,84 @@
+package multiservicios;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
+
+public class combustibles extends JDialog {
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			combustibles dialog = new combustibles();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public combustibles() {
+		setTitle("Combustibles");
+		setBounds(100, 100, 437, 192);
+		getContentPane().setLayout(null);
+		{
+			JLabel lblTipoDeCombustible = new JLabel("Tipo de Combustible  :");
+			lblTipoDeCombustible.setBounds(10, 11, 128, 20);
+			getContentPane().add(lblTipoDeCombustible);
+		}
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"--Seleccionar--", "Gasohol 90", "Gasohol 95", "Diesel"}));
+		comboBox.setBounds(148, 11, 133, 20);
+		getContentPane().add(comboBox);
+		
+		JLabel lblSoles = new JLabel("Soles  :");
+		lblSoles.setBounds(10, 42, 46, 14);
+		getContentPane().add(lblSoles);
+		
+		textField = new JTextField();
+		textField.setBounds(148, 42, 86, 20);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblGalones = new JLabel("Galones :");
+		lblGalones.setBounds(10, 73, 46, 14);
+		getContentPane().add(lblGalones);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(148, 70, 86, 20);
+		getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnVender = new JButton("Vender");
+		btnVender.setBounds(322, 10, 89, 23);
+		getContentPane().add(btnVender);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(322, 41, 89, 23);
+		getContentPane().add(btnCancelar);
+		
+		JLabel lblGrifero = new JLabel("Grifero :");
+		lblGrifero.setBounds(10, 110, 46, 14);
+		getContentPane().add(lblGrifero);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(148, 101, 133, 20);
+		getContentPane().add(comboBox_1);
+	}
+}

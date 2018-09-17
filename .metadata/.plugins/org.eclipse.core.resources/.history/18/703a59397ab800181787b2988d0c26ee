@@ -1,0 +1,47 @@
+package multiservicios;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+
+public class combustibles extends JDialog {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			combustibles dialog = new combustibles();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public combustibles() {
+		setTitle("Combustibles");
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		{
+			JLabel lblTipoDeCombustible = new JLabel("Tipo de Combustible  :");
+			lblTipoDeCombustible.setBounds(10, 11, 128, 20);
+			getContentPane().add(lblTipoDeCombustible);
+		}
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"-Seleccionar--", "Gasohol 90", "Gasohol 95", "Diesel"}));
+		comboBox.setBounds(148, 11, 133, 20);
+		getContentPane().add(comboBox);
+	}
+}
